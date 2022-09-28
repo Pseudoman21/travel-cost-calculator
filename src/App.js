@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { BsCompass, BsTrash, BsYoutube } from 'react-icons/bs'
+import ModalDialog from './components/ModalDialog'
 
 function App () {
   const [total, setTotal] = useState(0)
@@ -25,9 +26,20 @@ function App () {
     setFuel(fuel)
     setTotal(computed)
     setTotalPerPassenger(computed / passenger)
+    setIsOpen(true)
   }
+  // const [modalIsOpen, setIsOpen] = useState(false)
+  const [visible, setIsOpen] = useState(false)
   return (
     <>
+      <ModalDialog
+        visible={visible}
+        toggleModal={() => setIsOpen(!visible)}
+        fuel={fuel}
+        total={total}
+        totalPerPassenger={totalPerPassenger}
+      />
+      {visible}
       <section className='App'>
         <div className='container'>
           <div className='header-area d-flex'>
@@ -190,22 +202,6 @@ function App () {
                 >
                   <BsTrash style={{ color: 'rgb(43, 43, 43)' }} />
                 </button>
-              </div>
-              <div className='d-lg-flex'>
-                <div className='form-group'>
-                  <h3>Total fuel:</h3>
-                  <span className='result'>{fuel.toFixed(2)}L</span>
-                </div>
-                <div className='form-group'>
-                  <h3>Total cost:</h3>
-                  <span className='result'>Php {total.toFixed(2)}</span>
-                </div>
-                <div className='form-group'>
-                  <h3>Per passenger:</h3>
-                  <span className='result'>
-                    Php {totalPerPassenger.toFixed(2)}
-                  </span>
-                </div>
               </div>
             </form>
           </div>
