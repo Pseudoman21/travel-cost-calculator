@@ -1,10 +1,118 @@
 .App {
+  display: flex;
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+}
+
+.header-area {
+  position: absolute;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+svg {
+  color: red;
+  margin: auto;
+}
+
+form {
+  display: grid;
+}
+
+.container {
+  max-width: 70%;
+  margin: auto;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.btn-c {
+  padding: 10px 10px;
+  margin: 0 2px;
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
+  color: rgb(43, 43, 43);
+  font-size: 2.5vh;
+  border-radius: 2px;
+  min-width: 30px;
+  background-color: #d1cac0;
+}
+
+.btn-a,
+.btn-d {
+  margin: 0 2px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 2.5vh;
+  border-radius: 2px;
+  min-width: 30px;
+}
+
+.btn-a {
+  background-color: #897c6c;
+}
+
+.btn-d {
+  background-color: #b8bebe;
+}
+
+.d-flex,
+.d-lg-flex {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 12vh;
+  height: 3vh;
+  color: white;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  font-size: calc(5px + 2vmin);
+}
+
+input:focus-visible {
+  outline-offset: transparent !important;
+  outline-offset: none !important;
+}
+
+label {
+  font-size: calc(5px + 2vmin);
+}
+
+.result {
+  color: #897c6c;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+@media screen and (max-width: 568px) {
+  .d-lg-flex {
+    display: grid;
+  }
+
+  .d-lg-flex .form-group {
+    margin: 5px 0 !important;
+  }
+
+  .d-lg-flex h3 {
+    margin: 2px !important;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,9 +121,15 @@
   }
 }
 
+.form-group {
+  margin: 20px 0;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
