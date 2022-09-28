@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { BsCompass, BsTrash, BsYoutube } from 'react-icons/bs'
+import ModalDialog from './components/ModalDialog'
 
 function App () {
   const [total, setTotal] = useState(0)
@@ -25,9 +26,19 @@ function App () {
     setFuel(fuel)
     setTotal(computed)
     setTotalPerPassenger(computed / passenger)
+    setIsOpen(true)
   }
+  const [visible, setIsOpen] = useState(false)
   return (
     <>
+      <ModalDialog
+        visible={visible}
+        toggleModal={() => setIsOpen(!visible)}
+        fuel={fuel}
+        total={total}
+        totalPerPassenger={totalPerPassenger}
+      />
+      {visible}
       <section className='App'>
         <div className='container'>
           <div className='header-area d-flex'>
@@ -67,7 +78,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setKmToTravel(kmToTravel + 1)
+                      setKmToTravel(parseInt(kmToTravel) + 1)
                     }}
                   >
                     +
@@ -75,7 +86,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setKmToTravel(kmToTravel !== 0 ? kmToTravel - 1 : 0)
+                      setKmToTravel(
+                        kmToTravel !== 0 ? parseInt(kmToTravel) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -98,7 +111,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setAvgFuelCons(avgFuelCons + 1)
+                      setAvgFuelCons(parseInt(avgFuelCons) + 1)
                     }}
                   >
                     +
@@ -106,7 +119,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setAvgFuelCons(avgFuelCons !== 0 ? avgFuelCons - 1 : 0)
+                      setAvgFuelCons(
+                        avgFuelCons !== 0 ? parseInt(avgFuelCons) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -128,7 +143,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setFuelPrice(fuelPrice + 1)
+                      setFuelPrice(parseInt(fuelPrice) + 1)
                     }}
                   >
                     +
@@ -136,7 +151,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setFuelPrice(fuelPrice !== 0 ? fuelPrice - 1 : 0)
+                      setFuelPrice(
+                        fuelPrice !== 0 ? parseInt(fuelPrice) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -158,7 +175,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setPassenger(passenger + 1)
+                      setPassenger(parseInt(passenger) + 1)
                     }}
                   >
                     +
@@ -166,7 +183,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setPassenger(passenger !== 0 ? passenger - 1 : 0)
+                      setPassenger(
+                        passenger !== 0 ? parseInt(passenger) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -190,22 +209,6 @@ function App () {
                 >
                   <BsTrash style={{ color: 'rgb(43, 43, 43)' }} />
                 </button>
-              </div>
-              <div className='d-lg-flex'>
-                <div className='form-group'>
-                  <h3>Total fuel:</h3>
-                  <span className='result'>{fuel.toFixed(2)}L</span>
-                </div>
-                <div className='form-group'>
-                  <h3>Total cost:</h3>
-                  <span className='result'>Php {total.toFixed(2)}</span>
-                </div>
-                <div className='form-group'>
-                  <h3>Per passenger:</h3>
-                  <span className='result'>
-                    Php {totalPerPassenger.toFixed(2)}
-                  </span>
-                </div>
               </div>
             </form>
           </div>
