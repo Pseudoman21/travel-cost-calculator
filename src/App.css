@@ -33,7 +33,8 @@ label {
   margin-bottom: 10px;
 }
 
-.btn-c {
+.btn-c,
+.btn-clear {
   padding: 10px 10px;
   margin: 0 2px;
   margin-bottom: 15px;
@@ -58,7 +59,8 @@ label {
   min-width: 30px;
 }
 
-.btn-a {
+.btn-a,
+.btn-clear {
   background-color: #897c6c;
   transition: all 0.3s ease-in-out;
 }
@@ -80,6 +82,12 @@ label {
 
 .btn-c:hover {
   background-color: #59554f;
+  color: rgb(201, 200, 200);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-clear:hover {
+  background-color: #685f54;
   color: rgb(201, 200, 200);
   transition: all 0.3s ease-in-out;
 }

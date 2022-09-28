@@ -197,7 +197,7 @@ function App () {
                   Calculate
                 </button>
                 <button
-                  className='btn-c d-flex'
+                  className='btn-clear d-flex'
                   onClick={() => {
                     setAvgFuelCons(0)
                     setFuel(0)
