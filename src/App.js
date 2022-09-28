@@ -205,6 +205,7 @@ function App () {
                     setPassenger(0)
                     setTotal(0)
                     setTotalPerPassenger(0)
+                    setFuelPrice(0)
                   }}
                 >
                   <BsTrash style={{ color: 'rgb(43, 43, 43)' }} />
