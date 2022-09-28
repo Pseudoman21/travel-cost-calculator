@@ -4,6 +4,7 @@ import { BsCompass, BsTrash, BsYoutube } from 'react-icons/bs'
 import ModalDialog from './components/ModalDialog'
 
 function App () {
+  const [error, setError] = useState('')
   const [total, setTotal] = useState(0)
   const [totalPerPassenger, setTotalPerPassenger] = useState(0)
   const [fuel, setFuel] = useState(0)
@@ -21,12 +22,14 @@ function App () {
       (kmToTravel === 0) | (avgFuelCons === 0) ||
       fuelPrice === 0 ||
       passenger === 0
-    )
-      return
-    setFuel(fuel)
-    setTotal(computed)
-    setTotalPerPassenger(computed / passenger)
-    setIsOpen(true)
+    ) {
+      setError('Error: All fields are required')
+    } else {
+      setFuel(fuel)
+      setTotal(computed)
+      setTotalPerPassenger(computed / passenger)
+      setIsOpen(true)
+    }
   }
   const [visible, setIsOpen] = useState(false)
   return (
@@ -73,7 +76,9 @@ function App () {
                     type='number'
                     onChange={e => {
                       setKmToTravel(e.target.value)
+                      setError('')
                     }}
+                    required
                   />
                   <button
                     className='btn-a'
@@ -96,7 +101,7 @@ function App () {
                 </div>
               </div>
               <div className='form-group'>
-                <label>Average Fuel Consumption</label>
+                <label>Avg. Fuel Consumption</label>
                 <div className='d-flex'>
                   <span>Km/L</span>
 
@@ -106,6 +111,7 @@ function App () {
                     type='number'
                     onChange={e => {
                       setAvgFuelCons(e.target.value)
+                      setError('')
                     }}
                   />
                   <button
@@ -138,6 +144,7 @@ function App () {
                     type='number'
                     onChange={e => {
                       setFuelPrice(e.target.value)
+                      setError('')
                     }}
                   />
                   <button
@@ -170,6 +177,7 @@ function App () {
                     type='number'
                     onChange={e => {
                       setPassenger(e.target.value)
+                      setError('')
                     }}
                   />
                   <button
@@ -192,6 +200,9 @@ function App () {
                   </button>
                 </div>
               </div>
+              <span className='text-error'>
+                <i>{error}</i>
+              </span>
               <div className='d-flex'>
                 <button className='btn-c' onClick={calculate}>
                   Calculate
@@ -206,6 +217,7 @@ function App () {
                     setTotal(0)
                     setTotalPerPassenger(0)
                     setFuelPrice(0)
+                    setError('')
                   }}
                 >
                   <BsTrash style={{ color: 'rgb(43, 43, 43)' }} />

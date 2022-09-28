@@ -118,14 +118,22 @@ input:focus-visible {
   outline-offset: none !important;
 }
 
+.text-error {
+  color: #ff1e1e;
+  font-size: 2vh;
+  margin-bottom: 15px;
+}
+
 label {
-  font-size: calc(5px + 2vmin);
+  color: #ca7c7c;
+  font-size: calc(3px + 2vmin);
+  text-align: right;
 }
 
 .modal-body h2,
 .modal-body h3 {
   margin-top: 0;
-  color:rgb(244, 216, 216);
+  color: rgb(244, 216, 216);
 }
 
 .btn-close {
@@ -148,6 +156,10 @@ label {
 }
 
 @media screen and (max-width: 568px) {
+  label {
+    font-size: calc(5px + 2vmin);
+  }
+
   .d-lg-flex {
     display: grid;
   }
