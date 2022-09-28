@@ -44,6 +44,7 @@ label {
   border-radius: 2px;
   min-width: 30px;
   background-color: #d1cac0;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-a,
@@ -59,10 +60,28 @@ label {
 
 .btn-a {
   background-color: #897c6c;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-d {
   background-color: #b8bebe;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-a:hover {
+  background-color: #685f54;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-d:hover {
+  background-color: #8b9292;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-c:hover {
+  background-color: #59554f;
+  color: rgb(201, 200, 200);
+  transition: all 0.3s ease-in-out;
 }
 
 .d-flex,
