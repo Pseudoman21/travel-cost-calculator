@@ -71,7 +71,6 @@ function App () {
                 <div className='d-flex'>
                   <span>Km</span>
                   <input
-                    placeholder='Km'
                     value={kmToTravel}
                     type='number'
                     onChange={e => {
@@ -106,7 +105,6 @@ function App () {
                   <span>Km/L</span>
 
                   <input
-                    placeholder='Km/L'
                     value={avgFuelCons}
                     type='number'
                     onChange={e => {
@@ -139,7 +137,6 @@ function App () {
                 <div className='d-flex'>
                   <span>Php</span>
                   <input
-                    placeholder='Fuel Price'
                     value={fuelPrice}
                     type='number'
                     onChange={e => {
