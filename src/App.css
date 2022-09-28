@@ -121,6 +121,7 @@ label {
 }
 
 .btn-close {
+  cursor: pointer;
   position: absolute;
   right: 6px;
   top: 6px;
