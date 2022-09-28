@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/travel-cost-calculator/static/css/main.a65e2616.css",
+    "main.js": "/travel-cost-calculator/static/js/main.d0c72f0f.js",
+    "static/js/787.7dad2474.chunk.js": "/travel-cost-calculator/static/js/787.7dad2474.chunk.js",
+    "index.html": "/travel-cost-calculator/index.html",
+    "main.a65e2616.css.map": "/travel-cost-calculator/static/css/main.a65e2616.css.map",
+    "main.d0c72f0f.js.map": "/travel-cost-calculator/static/js/main.d0c72f0f.js.map",
+    "787.7dad2474.chunk.js.map": "/travel-cost-calculator/static/js/787.7dad2474.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a65e2616.css",
+    "static/js/main.d0c72f0f.js"
+  ]
+}
