@@ -28,7 +28,6 @@ function App () {
     setTotalPerPassenger(computed / passenger)
     setIsOpen(true)
   }
-  // const [modalIsOpen, setIsOpen] = useState(false)
   const [visible, setIsOpen] = useState(false)
   return (
     <>
@@ -79,7 +78,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setKmToTravel(kmToTravel + 1)
+                      setKmToTravel(parseInt(kmToTravel) + 1)
                     }}
                   >
                     +
@@ -87,7 +86,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setKmToTravel(kmToTravel !== 0 ? kmToTravel - 1 : 0)
+                      setKmToTravel(
+                        kmToTravel !== 0 ? parseInt(kmToTravel) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -110,7 +111,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setAvgFuelCons(avgFuelCons + 1)
+                      setAvgFuelCons(parseInt(avgFuelCons) + 1)
                     }}
                   >
                     +
@@ -118,7 +119,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setAvgFuelCons(avgFuelCons !== 0 ? avgFuelCons - 1 : 0)
+                      setAvgFuelCons(
+                        avgFuelCons !== 0 ? parseInt(avgFuelCons) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -140,7 +143,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setFuelPrice(fuelPrice + 1)
+                      setFuelPrice(parseInt(fuelPrice) + 1)
                     }}
                   >
                     +
@@ -148,7 +151,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setFuelPrice(fuelPrice !== 0 ? fuelPrice - 1 : 0)
+                      setFuelPrice(
+                        fuelPrice !== 0 ? parseInt(fuelPrice) - 1 : 0
+                      )
                     }}
                   >
                     -
@@ -170,7 +175,7 @@ function App () {
                   <button
                     className='btn-a'
                     onClick={() => {
-                      setPassenger(passenger + 1)
+                      setPassenger(parseInt(passenger) + 1)
                     }}
                   >
                     +
@@ -178,7 +183,9 @@ function App () {
                   <button
                     className='btn-d'
                     onClick={() => {
-                      setPassenger(passenger !== 0 ? passenger - 1 : 0)
+                      setPassenger(
+                        passenger !== 0 ? parseInt(passenger) - 1 : 0
+                      )
                     }}
                   >
                     -
